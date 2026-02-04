@@ -1,6 +1,22 @@
-# SPD Metrics (PCM & BWCM)
+[<img src="https://img.shields.io/badge/arXiv-2407.02607-b31b1b"></img>](https://arxiv.org/abs/2407.02607)
+[<img src="https://img.shields.io/badge/OpenReview|forum-5S8ruWKe8l-8c1b13"></img>](https://openreview.net/forum?id=5S8ruWKe8l)
+[<img src="https://img.shields.io/badge/OpenReview|pdf-5S8ruWKe8l-8c1b13"></img>](https://openreview.net/pdf?id=5S8ruWKe8l)
+
+# Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry
 
 This folder provides implementations of the Power Cholesky Metric (PCM) and the Bures-Wasserstein Cholesky Metric (BWCM) on the SPD manifold.
+
+If you find this project helpful, please consider citing us as follows:
+
+```bib
+@inproceedings{chen2026fast,
+    title={Fast and Stable Riemannian Metrics on {SPD} Manifolds via Cholesky Product Geometry},
+    author={Ziheng Chen and Yue Song and Xiao-Jun Wu and Nicu Sebe},
+    booktitle={The Fourteenth International Conference on Learning Representations},
+    year={2026},
+    url={https://openreview.net/forum?id=5S8ruWKe8l}
+}
+```
 
 ## Quickstart
 
@@ -10,7 +26,7 @@ This folder provides implementations of the Power Cholesky Metric (PCM) and the 
 
 - `spd_matrices.py` — metric implementations.
 - `test_code.py` — lightweight consistency tests with PASS/FAIL output (`python -m SPD.test_code`).
-- `example.py` — simple usage example (see below) (`python -m SPD.example`).
+- `example.py` — simple usage example (see below) (`python SPD.example`).
 - `readme.md` — this file.
 
 ## Requirements
@@ -73,3 +89,6 @@ if __name__ == "__main__":
     main()
 
 ```
+
+## Notes
+The SPD MLRs based on PCM and BWCM have been integrated into the [RMLR](https://github.com/GitZH-Chen/RMLR) repository.
