@@ -25,7 +25,7 @@ If you find this project helpful, please consider citing us as follows:
 ## Files
 
 - `spd_matrices.py` — metric implementations.
-- `test_code.py` — lightweight consistency tests with PASS/FAIL output (`python -m SPD.test_code`).
+- `test_code.py` — lightweight consistency tests with PASS/FAIL output (`python SPD.test_code`).
 - `example.py` — simple usage example (see below) (`python SPD.example`).
 - `readme.md` — this file.
 
