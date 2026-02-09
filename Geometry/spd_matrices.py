@@ -1,3 +1,14 @@
+"""
+    Official Implementation of the SPD geometries presented in
+    @inproceedings{chen2026fast,
+        title={Fast and Stable {Riemannian} Metrics on {SPD} Manifolds via {Cholesky} Product Geometry},
+        author={Ziheng Chen and Yue Song and Xiao-Jun Wu and Nicu Sebe},
+        booktitle={The Fourteenth International Conference on Learning Representations},
+        year={2026},
+        url={https://openreview.net/forum?id=5S8ruWKe8l}
+    }
+"""
+
 import torch as th
 import torch.nn as nn
 from typing import Optional, Tuple, Union
