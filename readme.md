@@ -124,8 +124,6 @@ MATLAB scripts for numerical validation and visualization experiments.
 
 - `numerical_exp/geodesic_diff.m`: validates numerical stability of Cholesky metrics (Tab. 5).
 - `numerical_exp/swelling_effects.m`: visualizes tensor interpolation of induced SPD metrics (App. E.2).
-- `numerical_exp/Cholesky_utilites/`: Cholesky-geometry utility functions.
-- `numerical_exp/SPD_utilites/`: SPD utility and plotting functions.
 
 ### Requirements
 
