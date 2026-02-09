@@ -4,13 +4,21 @@
 
 # Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry
 
-This folder provides implementations of the Power Cholesky Metric (PCM) and the Bures-Wasserstein Cholesky Metric (BWCM) on the SPD manifold.
+This repository contains the official code release for:
 
-If you find this project helpful, please consider citing us as follows:
+- *Fast and Stable Riemannian Metrics on SPD Manifolds via Cholesky Product Geometry* (ICLR 2026)
+
+It is organized into three parts:
+
+1. `Geometry/`: PyTorch implementation of PCM and BWCM on SPD manifolds.
+2. `numerical_exp/`: MATLAB scripts for numerical validation and visualization experiments.
+3. `RMLR`: The SPD MLRs based on PCM and BWCM have been integrated into [RMLR](https://github.com/GitZH-Chen/RMLR) repository.
+
+If you find this project helpful, please consider citing:
 
 ```bib
 @inproceedings{chen2026fast,
-    title={Fast and Stable Riemannian Metrics on {SPD} Manifolds via Cholesky Product Geometry},
+    title={Fast and Stable {Riemannian} Metrics on {SPD} Manifolds via {Cholesky} Product Geometry},
     author={Ziheng Chen and Yue Song and Xiao-Jun Wu and Nicu Sebe},
     booktitle={The Fourteenth International Conference on Learning Representations},
     year={2026},
@@ -18,31 +26,50 @@ If you find this project helpful, please consider citing us as follows:
 }
 ```
 
-## Quickstart
+## 1) Geometry
 
-`example.py` executes `expmap`, `logmap`, `geodesic`, `parallel_transport`, `dist`, and `inner` for both metrics.
+PyTorch implementation of:
 
-## Files
+- Power Cholesky Metric (PCM)
+- Bures-Wasserstein Cholesky Metric (BWCM)
 
-- `spd_matrices.py` — metric implementations.
-- `test_code.py` — lightweight consistency tests with PASS/FAIL output (`python SPD.test_code`).
-- `example.py` — simple usage example (see below) (`python SPD.example`).
-- `readme.md` — this file.
+### Files
 
-## Requirements
+- `Geometry/spd_matrices.py`: metric implementations.
+- `Geometry/example.py`: quick usage demo for `expmap`, `logmap`, `geodesic`, `parallel_transport`, `dist`, and `inner`.
+- `Geometry/test_code.py`: lightweight consistency checks with PASS/FAIL outputs.
 
-- Python with `torch` installed.
+### Requirements
 
-## Example Usage
+- Python
+- `torch`
+
+### Run
+
+From the repository root, enter `Geometry/` and run:
+
+```bash
+python example.py
+python test_code.py
+```
+
+### Example Usage
 
 ```python
 import torch as th
 
-from SPD.spd_matrices import (
-    SPDMatrices,
-    SPDPowerCholeskyMetric,
-    SPDBuresWassersteinCholeskyMetric,
-)
+try:
+    from .spd_matrices import (
+        SPDMatrices,
+        SPDPowerCholeskyMetric,
+        SPDBuresWassersteinCholeskyMetric,
+    )
+except ImportError:
+    from spd_matrices import (
+        SPDMatrices,
+        SPDPowerCholeskyMetric,
+        SPDBuresWassersteinCholeskyMetric,
+    )
 
 
 def main():
@@ -87,8 +114,34 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 ```
 
-## Notes
-The SPD MLRs based on PCM and BWCM have been integrated into the [RMLR](https://github.com/GitZH-Chen/RMLR) repository.
+## 2) numerical_exp
+
+MATLAB scripts for numerical validation and visualization experiments.
+
+### Files
+
+- `numerical_exp/geodesic_diff.m`: validates numerical stability of Cholesky metrics (Tab. 5).
+- `numerical_exp/swelling_effects.m`: visualizes tensor interpolation of induced SPD metrics (App. E.2).
+- `numerical_exp/Cholesky_utilites/`: Cholesky-geometry utility functions.
+- `numerical_exp/SPD_utilites/`: SPD utility and plotting functions.
+
+### Requirements
+
+- MATLAB
+
+### Run
+
+Open MATLAB in `numerical_exp/` and run:
+
+```matlab
+geodesic_diff
+swelling_effects
+```
+
+## 3) RMLR
+
+The SPD MLRs based on PCM and BWCM have been integrated into:
+
+- [RMLR repository](https://github.com/GitZH-Chen/RMLR)

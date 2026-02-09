@@ -1,10 +1,17 @@
 import torch as th
 
-from .spd_matrices import (
-    SPDMatrices,
-    SPDPowerCholeskyMetric,
-    SPDBuresWassersteinCholeskyMetric,
-)
+try:
+    from .spd_matrices import (
+        SPDMatrices,
+        SPDPowerCholeskyMetric,
+        SPDBuresWassersteinCholeskyMetric,
+    )
+except ImportError:
+    from spd_matrices import (
+        SPDMatrices,
+        SPDPowerCholeskyMetric,
+        SPDBuresWassersteinCholeskyMetric,
+    )
 
 
 def check_point(helper: SPDMatrices, x):
